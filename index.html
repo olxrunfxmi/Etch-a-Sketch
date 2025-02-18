@@ -7,7 +7,57 @@
     <script src="js/script.js" defer></script>
     <title>Document</title>
 </head>
-<body>
-    <h1>Etch-A-Sketch</h1>
+<body class="inter">
+    <div class="container">
+        <div class="line">
+            <div class="start-line stack looser">
+                <div class="stack tighter">
+                    <span class="highlighter">Play</span>
+                    <h1 class="heading-main">Etch-A-Sketch</h1>
+                    <p class="para-main">Draw because you can always draw. Never because you must. Always draw. Move the way you want. It's your canvas. No one else's.</p>
+                </div>
+                <div class="stack tighter">
+                    <h5 class="heading-sub">Controls</h5>
+                    <div class="group tighter">
+                        <button class="btn">Random Mode</button>
+                        <button class="btn">Eraser Mode</button>
+                        <button class="btn">Clear</button>
+                        <input class="input color-picker" type="color" name="color" id="color-picker">
+                    </div>
+                </div>
+                <div class="stack tighter">
+                    <h5 class="heading-sub">Grid Size</h5>
+                    <input class="input" type="number">
+                </div>
+            </div>
+            <div class="end-line">
+                <div class="frame box elevated-one small">
+                    <div class="top-frame extender">
+                        <span>Sketch Board - Normal Mode</span>
+                        <span>✖️🟥🔵</span>
+                    </div>
+                    <div class="sketch-box inner-box"></div>
+                    <div class="bottom-frame extender txt-center">
+                        <span>64 X 64 Grid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="big spacer">
+            <span class="small callout">
+                <i>Salvador Dalí</i>
+                <i class="alt">Quote start</i>
+            </span>
+            Drawing is the honesty of the art. There is no possibility of cheating. It is either good or bad.
+            <span class="small callout">
+                <i>Salvador Dalí</i>
+                <i class="alt">Quote start</i>
+            </span>
+        </p>
+    </div>
+    <div class="line footer small">
+        <p>An Odin Inspired Project</p>
+        <p><a class="declarator" href="https://github.com/olxrunfxmi">GitHub</a></p>
+    </div>
 </body>
 </html>
