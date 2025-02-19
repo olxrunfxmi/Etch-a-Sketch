@@ -1,15 +1,11 @@
-// Testing In
-// const sketchBox = document.querySelector(".sketch-box");
-// const parentMain = document.querySelector(".main");
-
-// Testing Out
-
 // DOM References
 let items = document.querySelectorAll(".item");
 const buttons = document.querySelectorAll("button");
 const inputs = document.querySelectorAll("input");
 const colorInput = document.querySelector(".color-picker");
 const gridInput = document.querySelector("#size");
+const indicator = document.querySelector("#indicator");
+const boardTitle = document.querySelector("#boardtitle");
 
 // Global Variables
 let isMoving = false;
@@ -66,6 +62,7 @@ function changeInputBehaviour(input) {
 	if (input.id === "size") {
 		console.log("Grid Size");
 		let gridSize = filterValue(input.value);
+		indicator.textContent = `${gridSize} X ${gridSize} Grid`;
 		if (gridSize !== undefined) {
 			console.log(gridSize);
 			generateGrid(input.value);
@@ -73,6 +70,7 @@ function changeInputBehaviour(input) {
 	} else if (input.id === "color-picker") {
 		currentColorValue = input.value;
 		resetRandomEasing();
+		boardTitle.textContent = "Sketch Board - Normal Mode";
 	}
 }
 
@@ -83,12 +81,14 @@ function changeButtonBehaviour(button) {
 		isErasing = false;
 		button.classList.add("active");
 		buttons[1].classList.remove("active");
+		boardTitle.textContent = "Sketch Board - Random Mode";
 	} else if (button.id === "eraser") {
 		console.log("Eraser");
 		isErasing = setErasing();
 		isRandom = false;
 		button.classList.add("active");
 		buttons[0].classList.remove("active");
+		boardTitle.textContent = "Sketch Board - Eraser Mode";
 	} else if (button.id === "clear") {
 		console.log("Clear");
 		buttons[0].classList.remove("active");
@@ -96,6 +96,7 @@ function changeButtonBehaviour(button) {
 		items.forEach((item) => {
 			item.style.backgroundColor = "#FFF";
 		});
+		boardTitle.textContent = "Sketch Board - Normal Mode";
 	}
 }
 
@@ -145,9 +146,6 @@ function generateGrid(gridSize) {
 		}
 	}
 
-	// document.body.appendChild(container);
-	// sketchBox.appendChild(container);
-	// sketchBox.replaceWith(container)
 	parentMain.replaceChild(container, sketchBox);
 
 	items = document.querySelectorAll(".item");
