@@ -71,6 +71,8 @@ function changeInputBehaviour(input) {
 		currentColorValue = input.value;
 		resetRandomEasing();
 		boardTitle.textContent = "Sketch Board - Normal Mode";
+		buttons[0].classList.remove("active");
+		buttons[1].classList.remove("active");
 	}
 }
 
